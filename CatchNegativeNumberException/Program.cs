@@ -15,23 +15,20 @@ class Program
 {
     static void Main(string[] args)
     {
-		try
+	try
+	{		
+		int number = int.Parse(Console.ReadLine()!);
+
+		if (number < 0)
 		{
-				
-			int number = int.Parse(Console.ReadLine()!);
-
-			if (number < 0)
-			{
-				throw new NegativeNumberException("Число не должно быть отрицательным");
-			}
-
+			throw new NegativeNumberException("Число не должно быть отрицательным");
 		}
-		catch (NegativeNumberException ex)
-		{
-            Console.WriteLine(ex.Message);
+	
 		}
-
-
+	catch (NegativeNumberException ex)
+	{
+    		Console.WriteLine(ex.Message);
+	}
     }
 }
 
