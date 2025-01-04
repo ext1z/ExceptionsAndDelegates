@@ -15,23 +15,21 @@ class Program
 {
     static void Main(string[] args)
     {
-		try
+	try
+	{
+		Console.Write("Введите положительное число:");
+		int number = int.Parse(Console.ReadLine()!);
+
+		if (number < 0)
 		{
-            Console.Write("Введите положительное число:");
-			int number = int.Parse(Console.ReadLine()!);
-
-			if (number < 0)
-			{
-				throw new NegativeNumberException("Число не должно быть отрицательным");
-			}
-
-
-            Console.WriteLine("Ваше число положительное");
-
+			throw new NegativeNumberException("Число не должно быть отрицательным");
 		}
+            	Console.WriteLine("Ваше число положительное");
+
+	}
 	catch (NegativeNumberException ex)
 	{
-    		Console.WriteLine(ex.Message);
+		Console.WriteLine(ex.Message);
 	}
     }
 }
