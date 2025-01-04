@@ -17,13 +17,16 @@ class Program
     {
 		try
 		{
-				
+            Console.Write("Введите положительное число:");
 			int number = int.Parse(Console.ReadLine()!);
 
 			if (number < 0)
 			{
 				throw new NegativeNumberException("Число не должно быть отрицательным");
 			}
+
+
+            Console.WriteLine("Ваше число положительное");
 
 		}
 		catch (NegativeNumberException ex)

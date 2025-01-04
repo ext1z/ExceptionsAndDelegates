@@ -22,7 +22,7 @@ class Porgram
             
             int number = int.Parse(Console.ReadLine()!);
 
-            if (number > int.MaxValue)
+            if (number > int.MaxValue && number > int.MinValue)
             {
                 throw new OverflowException();
             }
@@ -36,7 +36,7 @@ class Porgram
         }
         catch (OverflowException ex)
         {
-            Console.WriteLine($"Введенное число должно быть меньше {int.MaxValue} !!!!");
+            Console.WriteLine($"Введенное число должно быть меньше {int.MaxValue} или меньше чем {int.MinValue} !!!!");
         }
 
     }

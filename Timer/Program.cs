@@ -9,14 +9,6 @@
 
 using System.Timers;
 
-
-
-
-
-
-
-
-
 class Program
 {
     static void Main(string[] args)
@@ -35,6 +27,7 @@ class Program
 
     private static void Clock_TickNotify(object sender, ElapsedEventArgs e)
     {
+        Console.WriteLine("Секунда прошла!!");
         Console.WriteLine($"{e.SignalTime}");
     }
 }

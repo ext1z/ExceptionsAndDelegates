@@ -23,14 +23,14 @@ class Program
         stock.ShowPrice();
         stock.ChangePrice(50);
 
-        void FirstSubscriber(string message)
+        void FirstSubscriber(string message, int priceValue)
         {
             Console.WriteLine($"Подписчик 1 : {message}");
         }
 
-        void SecondSubscriber(string message)
+        void SecondSubscriber(string message, int priceValue)
         {
-            if (stock.Price < 100)
+            if (priceValue < 100)
             {
                 Console.WriteLine($"Подписчик 2: Цена изменана, Внимания цена меньше чем {100}");
             }
@@ -46,7 +46,7 @@ class Program
 public class Stock
 {
 
-    public delegate void PriceChanged(string message);
+    public delegate void PriceChanged(string message, int priceValue);
     public event PriceChanged PriceChangedNotify;
 
     public int Price { get; set; } = 50;
@@ -65,7 +65,7 @@ public class Stock
     public void ChangePrice(int price)
     {
         Price = price;
-        PriceChangedNotify.Invoke($"Цена изменена {Price}");
+        PriceChangedNotify?.Invoke($"Цена изменена {Price}", Price);
     }
 
 }
