@@ -29,12 +29,10 @@ class Program
             Console.WriteLine("Ваше число положительное");
 
 		}
-		catch (NegativeNumberException ex)
-		{
-            Console.WriteLine(ex.Message);
-		}
-
-
+	catch (NegativeNumberException ex)
+	{
+    		Console.WriteLine(ex.Message);
+	}
     }
 }
 
